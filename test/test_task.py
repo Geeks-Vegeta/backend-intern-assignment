@@ -3,6 +3,7 @@ import json
 
 
 def test_create_task():
+    global ids
 
     data={
         "title": "dancdindg_dssd",
@@ -12,7 +13,6 @@ def test_create_task():
     response = app.test_client().post("/task", data=json.dumps(data),
                 headers={"Content-Type": "application/json"})
     data = json.loads(response.data.decode("utf-8"))
-    global ids
     ids = data['id']
 
     assert response.status_code == 201
