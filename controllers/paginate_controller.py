@@ -22,6 +22,11 @@ def getTasks():
             'page_list': [iter_page if iter_page else '...' for iter_page in alltask.iter_pages()],
             'posts': [{
                 'id': p.id,
+                "title":p.title,
+                "description":p.description,
+                "status":p.status,
+                "due_date":p.due_date,
+                "created_date":p.created_date
             } for p in alltask.items]
         })
             
